@@ -1,0 +1,17 @@
+function fibonacciGenerator (n) {
+    // Initialize the array with the first two Fibonacci numbers
+    var output = [0, 1];
+
+    // Start generating the Fibonacci sequence from the third number
+    for (var i = 2; i < n; i++) {
+        // Add the sum of the last two numbers in the output array to the array
+        output.push(output[i - 2] + output[i - 1]);
+    }
+
+    // Return the first n elements of the Fibonacci sequence
+    return output.slice(0, n);
+}
+
+// Example usage:
+console.log(fibonacciGenerator(3)); // Outputs [0, 1, 1]
+console.log(fibonacciGenerator(6)); // Outputs [0, 1, 1, 2, 3, 5]
